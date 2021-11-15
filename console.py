@@ -26,3 +26,6 @@ pet_repository.save(pet_2)
 pet_3 = Pet("Max", "Walker", "Dog", "23/08/2009", vet_2, owner_2)
 pet_repository.save(pet_3)
 
+pet_repository.select_all()
+vet_repository.select_all()
+

@@ -13,3 +13,16 @@ def save(pet):
     id = results[0]['id']
     pet.id = id
     return pet 
+
+def select_all():
+    pets = []
+
+    sql = "SELECT * FROM pets"
+    results = run_sql(sql)
+
+    for row in results:
+        vet = vet_repository.select(row['vet_id']) 
+        owner = owner_repository.select(row['owner_id'])
+        pet = Pet(row['first_name'], row['last_name'], row['type_of_pet'], row['date_of_birth'], vet, owner, row['id'])
+        pets.append(pet)
+    return pets

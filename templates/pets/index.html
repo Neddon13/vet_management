@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Our Pets</h2>
+<div>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Type of Pet</th>
+            <th>Date of Birth</th>
+            <th>Vet Assigned</th>
+            <th>Owner</th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <td>{{pet.first_name}}</td>
+            <td>{{pet.last_name}}</td>
+            <td>{{pet.type_of_pet}}</td>
+            <td>{{pet.date_of_birth}}</td>
+            <td>{{pet.vet.name}}</td>
+            <td>{{pet.owner.name}}</td>
+        </tr>
+{% endfor %}     
+    </table>
+</div>
+
+
+<div>
+    <button>Register New Pet</button>
+</div>
+
+{% endblock %}

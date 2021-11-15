@@ -1,19 +1,4 @@
 {% extends 'base.html' %}
 {% block content %}
-<header>
-    <h1>Pet Life</h1>
-    <div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/about">About Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<body>
-    <img src="{{ url_for('static', filename='images/goldenretriever.jpeg') }}" alt="dog smiling">
-</body>
+<img src="{{ url_for('static', filename='images/goldenretriever.jpeg') }}" alt="dog smiling">
 {% endblock %}
