@@ -9,8 +9,8 @@ CREATE TABLE vets (
 CREATE TABLE pets (
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
-    type VARCHAR(255) NOT NULL,
-    date_of_birth VARCHAR(255), NOT NULL,
-    contact INT,
+    type_of_pet VARCHAR(255) NOT NULL,
+    date_of_birth VARCHAR(255) NOT NULL,
+    contact_num VARCHAR(255) NOT NULL,
     vet_id INT REFERENCES vets(id)
 );
