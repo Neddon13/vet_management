@@ -8,6 +8,6 @@ pets_blueprint = Blueprint("pets", __name__)
 
 @pets_blueprint.route("/")
 def Welcome():
-    return "Hello World!"
+    return render_template ("index.html")
 
 
