@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Pet Life</title>
 <header>
-    <h1>Pet Life</h1>
-    <div>
+    <!-- <div> -->
+     <h1>Pet Life</h1>
+    <!-- </div> -->
+    <!-- <div> -->
         <nav>
             <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/register">Pet Register</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><button><a href="/">Home</a></button></li>
+                <li><button><a href="/owners">Owner Register</a></button></li>
+                <li><button><a href="/register">Pet Register</a></button></li>
+                <li><button><a href="/Help">Help</a></button></li>
             </ul>
         </nav>
-    </div>
+    <!-- </div> -->
 </header>
 <body>
     {% block content %}

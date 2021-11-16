@@ -34,4 +34,7 @@ def create_pet():
     pet_repository.save(pet)
     return redirect('/register')
 
-
+@pets_blueprint.route("/register/<id>/delete", methods=['POST'])
+def delete_pet(id):
+    pet_repository.delete(id)
+    return redirect('/register')
