@@ -10,6 +10,19 @@ def save(vet):
     return vet
 
 
+def select_all():
+    vets = []
+
+    sql = "SELECT * FROM vets"
+    results = run_sql(sql)
+   
+
+    for row in results:
+        vet = Vet(row['name'], row['id'])
+        vets.append(vet)
+    return vets
+
+
 def select(id):
     vet = None
     sql = "SELECT * FROM vets WHERE id = %s"
@@ -20,14 +33,14 @@ def select(id):
         vet = Vet(result['name'], result['id'])
     return vet
 
+# def vets(vet):
+#     vets = []
 
-def select_all():
-    vets = []
+#     sql = "SELECT * FROM vets WHERE vet_id = %s"
+#     values = [vet.id]
+#     results = run_sql(sql, values)
 
-    sql = "SELECT * FROM vets"
-    results = run_sql(sql)
-
-    for row in results:
-        vet = Vet(row['name'], row['id'])
-        vets.append(vet)
-    return vets
+#     for row in results:
+#         vet = Vet(row['name'], row['vet_id'])
+#         vets.append(vet)
+#     return vets

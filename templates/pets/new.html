@@ -1,5 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<form action="/register" method="post">
+    <div>
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" name="FirstName" placeholder="FirstName" required autofocus>
+    </div>
+    <div>
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" placeholder="LastName" required autofocus>
+    </div>
+    <div>
+        <label for="TypeOfPet">Type of Pet</label>
+        <input type="TypeOfPet" id="TypeOfPet" name="TypeOfPet" placeholder="TypeOfPet" required autofocus>
+    </div>
+    <div>
+        <label for="DateOfBirth">Date of Birth</label>
+        <input type="text" id="DateOfBirth" name="DateOfBirth" placeholder="DateOfBirth" required autofocus>
+    </div>
+    <div>
+        <label for="Vet">Vet Assigned</label>
+        <select id="vet" name="vet_id">
+            {% for vet in vets %}
+              <option value="{{ vet.id }}">{{ vet.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="Owner">Owner Details</label>
+        <select id="owner" name="owner_id">
+            {% for owner in owners %}
+              <option value="{{ owner.id }}">{{ owner.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button type="submit">Register Pet</button>
+    </div>
+</form>
 
 {% endblock %}

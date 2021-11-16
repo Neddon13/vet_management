@@ -28,4 +28,5 @@ pet_repository.save(pet_3)
 
 pet_repository.select_all()
 vet_repository.select_all()
+owner_repository.select_all()
 
