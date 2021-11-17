@@ -33,14 +33,13 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
 
-
     vet = vet_repository.select(result['vet_id'])
     owner = owner_repository.select(result['owner_id'])
     pet = Pet(result['first_name'], result['last_name'], result['type_of_pet'], result['date_of_birth'], result['treatment_notes'], vet, owner, result['id'])
     return pet
 
 def delete(id):
-    sql = "DELETE  FROM pets WHERE id = %s"
+    sql = "DELETE FROM pets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 

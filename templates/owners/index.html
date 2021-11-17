@@ -7,12 +7,11 @@
         <tr>
             <th>Name</th>
             <th>Address</th>
-            <th>mobile_num</th>
+            <th>Mobile Number</th>
         </tr>
         {% for owner in owners %}
         <tr>
             <td><a href="/owners/{{owner.id}}">{{owner.name}}</a></td>
-            <td>{{owner.name}}</td>
             <td>{{owner.address}}</td>
             <td>{{owner.mobile_num}}</td>
         </tr>

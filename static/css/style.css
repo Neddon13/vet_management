@@ -8,6 +8,7 @@ header {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 header > h1 {
@@ -67,9 +68,21 @@ footer {
 
 .register, tr, th, td {
     border: 1px solid black;
-    width: 999px;
+    width: 1088px;
     height: 40px;
+    border-collapse: collapse;
 }
+
+.owner_register {
+    border-collapse: collapse;
+    font-family: "comfortaa";
+}
+
+.Thisisabutton {
+    font-family: "Comfortaa";
+    justify-content: flex-end;
+}
+
 
 /* .data {
     font-family: "comfortaa";

@@ -33,22 +33,12 @@ def select(id):
         owner = Owner(result['name'], result['address'], result['mobile_num'], result['id'])
     return owner
 
+def update(owner):
+    sql = "UPDATE owners SET (name, address, mobile_num) = (%s, %s, %s) WHERE id = %s"
+    values = [owner.name, owner.address, owner.mobile_num, owner.id]
+    run_sql(sql, values)
 
-
-
-
-
-
-
-
-
-# def select_all():
-#     owners = []
-
-#     sql = "SELECT * FROM owners"
-#     results = run_sql(sql)
-
-#     for row in results:
-#         owner = Owner(row['name'], row['address'], row['mobile_num'], row['id'])
-#         owners.append(owner)
-#     return owner
+def delete(id):
+    sql = "DELETE FROM owners WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

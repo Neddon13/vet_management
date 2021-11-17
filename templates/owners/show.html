@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div>
+    <p>{{owner.name}}</p>
+    <hr>
+    <p>Address: {{owner.address}}</p>
+    <p>Contact Number: {{owner.mobile_num}}</p>
+
+    <form action="/owners/{{owner.id}}/edit">
+      <input type="submit" value="Edit" class="record_button">
+    </form>
+
+    <form action="/owners/{{owner.id}}/delete" method='post'>
+      <input type="submit" value="Delete" class="record_button">
+    </form>
+
+  </div>
+
+{% endblock %} 
