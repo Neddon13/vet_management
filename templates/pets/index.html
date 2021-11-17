@@ -1,5 +1,6 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
+
 <h2>Our Pets</h2>
 <div>
     <table class="register">
@@ -13,19 +14,37 @@
         </tr>
         {% for pet in pets %}
         <tr>
-            <td>{{pet.first_name}}</td>
+            <td><a href="/register/{{pet.id}}">{{pet.first_name}}</a></td>
             <td>{{pet.last_name}}</td>
             <td>{{pet.type_of_pet}}</td>
             <td>{{pet.date_of_birth}}</td>
             <td>{{pet.vet.name}}</td>
             <td>{{pet.owner.name}}</td>
         </tr>
-{% endfor %}     
+        {% endfor %}     
     </table>
 </div>
 
 <button>
 <a class="Thisisabutton" href="/register/new">Register New Pet</a>
 </button>
+
+
+<!-- {% for pet in pets %}
+  <div class="pet">
+    <div class="name">
+      {{pet.first_name}} {{pet.last_name}} 
+    </div>
+    <div class="details">
+        <a href="/pets/{{pet.id}}">{{pet.type_of_pet}}</a>
+    </div>
+    <div class="buttons">
+
+      <form class="delete-form" action="/pets/{{pet.id}}/delete" method="POST">
+        <input type="submit" value="Delete Record">
+      </form>
+{% endfor %}
+    </div>
+</div> -->
 
 {% endblock %}

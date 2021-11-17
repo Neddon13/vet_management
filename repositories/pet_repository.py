@@ -18,7 +18,7 @@ def select_all():
     pets = []
 
     sql = "SELECT * FROM pets"
-    results = run_sql(sql)
+    results = run_sql(sql) 
 
     for row in results:
         vet = vet_repository.select(row['vet_id']) 
@@ -26,6 +26,18 @@ def select_all():
         pet = Pet(row['first_name'], row['last_name'], row['type_of_pet'], row['date_of_birth'], vet, owner, row['id'])
         pets.append(pet)
     return pets
+
+def select(id): 
+    pet = None
+    sql = "SELECT * FROM pets WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+
+    vet = vet_repository.select(result['vet_id'])
+    owner = owner_repository.select(result['owner_id'])
+    pet = Pet(result['first_name'], result['last_name'], result['type_of_pet'], result['date_of_birth'], vet, owner, result['id'])
+    return pet
 
 def delete(id):
     sql = "DELETE  FROM pets WHERE id = %s"

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div>
+    <p>{{pet.first_name}} {{pet.last_name}}</p>
+    <hr>
+    <p>{{pet.type_of_pet}}</p>
+    <p>{{pet.date_of_birth}}</p>
+
+    <form action="/register/{{pet.id}}/edit">
+      <input type="submit" value="Edit" class="record_button">
+    </form>
+
+    <form action="/register/{{pet.id}}/delete">
+      <input type="submit" value="Delete" class="record_button">
+    </form>
+
+  </div>
+
+{% endblock %} 

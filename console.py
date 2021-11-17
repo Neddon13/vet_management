@@ -30,3 +30,5 @@ pet_repository.select_all()
 vet_repository.select_all()
 owner_repository.select_all()
 
+
+pdb.set_trace()
