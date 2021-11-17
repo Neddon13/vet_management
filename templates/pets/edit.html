@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="/register/{{pet.id}}" method="post">
+<form action="/register/{{pet.id}}/edit" method='post'>
     <div>
-        <label for="FirstName">First Name</label>
-        <input type="text" id="FirstName" name="FirstName" placeholder={{pet.first_name}} required autofocus>
+        <label for="FirstName">First Name: {{pet.first_name}}</label>
+        <input type="hidden" name="FirstName" value={{pet.first_name}}>
     </div>
     <div>
         <label for="LastName">Last Name</label>
-        <input type="text" id="LastName" name="LastName" placeholder="LastName" required autofocus>
+        <input type="text" id="LastName" name="LastName" placeholder={{pet.last_name}} required autofocus>
     </div>
     <div>
-        <label for="TypeOfPet">Type of Pet</label>
-        <input type="TypeOfPet" id="TypeOfPet" name="TypeOfPet" placeholder="TypeOfPet" required autofocus>
+        <label for="TypeOfPet">Type of Pet: {{pet.type_of_pet}}</label>
+        <input type="hidden" name="TypeOfPet" value={{pet.type_of_pet}}>
     </div>
     <div>
-        <label for="DateOfBirth">Date of Birth</label>
-        <input type="text" id="DateOfBirth" name="DateOfBirth" placeholder="DateOfBirth" required autofocus>
+        <label for="DateOfBirth">Date of Birth: {{pet.date_of_birth}}</label>
+        <input type="hidden" name="DateOfBirth" value={{pet.date_of_birth}}>
+    </div>
+    <div>
+        <label for="TreatmentNotes">Treatment Notes</label>
+        <input type="text" name="TreatmentNotes" value={{pet.treatment_notes}}>
     </div>
     <div>
         <label for="Vet">Vet Assigned</label>

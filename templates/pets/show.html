@@ -6,7 +6,8 @@
     <hr>
     <p>{{pet.type_of_pet}}</p>
     <p>{{pet.date_of_birth}}</p>
-
+    <p>{{pet.owner.name}}</p>
+    <p>{{pet.owner.mobile_num}}</p>
     <form action="/register/{{pet.id}}/edit">
       <input type="submit" value="Edit" class="record_button">
     </form>
